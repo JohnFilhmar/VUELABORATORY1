@@ -1,31 +1,13 @@
-<template>
-  <nav>
-    <router-link to="/home">Welcome to Vue</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/application">My First Application</router-link> |
-    <router-link to="/login">Login</router-link>
-  </nav>
+<template> 
   <router-view/>
 </template>
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style scoped>
+  #asdf{
+    text-align: center;
+  }
+  #asdf a {
+    text-decoration: none;
+    color: black;
+    margin: 40px;
+  }
 </style>

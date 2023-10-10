@@ -1,32 +1,64 @@
 <template>
     <div>
-        <Header/>
-        <Banner/>
-        <Featured/>
+        <Hero/>
+        <Why/>
+        <Product/>
+        <Client/>
         <Footer/>
     </div>
 </template>
 
 <script>
-import Header from '@/components/Application/Header.vue';
-import Banner from '@/components/Application/Banner.vue';
-import Featured from '@/components/Application/Featured.vue';
-import Footer from '@/components/Application/Footer.vue';
+
+import Hero from '@/ApplicationComponents/Hero.vue';
+import Why from '@/ApplicationComponents/Why.vue';
+import Product from '@/ApplicationComponents/Product.vue';
+import Client from '@/ApplicationComponents/Client.vue';
+import Footer from '@/ApplicationComponents/Footer.vue';
 export default {
     name: 'Application',
     components: {
-        Header,
-        Banner,
-        Featured,
+        Hero,
+        Why,
+        Product,
+        Client,
         Footer
+    },
+    mounted() {
+        const scriptPaths = [
+        'famms/js/jquery-3.4.1.min.js',
+        'famms/js/popper.min.js',
+        'famms/js/bootstrap.js',
+        'famms/js/custom.js',
+        ];
+
+        const loadScript = (path) => {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = path;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+        };
+
+        const loadScripts = async () => {
+        try {
+            await loadScript(scriptPaths[0]); // Load jQuery first
+            for (let i = 1; i < scriptPaths.length; i++) {
+            await loadScript(scriptPaths[i]);
+            }
+        } catch (error) {
+            console.error('Failed to load scripts:', error);
+        }
+        };
+
+        loadScripts();
     }
 }
 </script>
-
 <style scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap');
-    @import '@/assets/zayshop/assets/css/bootstrap.min.css';
-    @import '@/assets/zayshop/assets/css/templatemo.css';
-    @import '@/assets/zayshop/assets/css/custom.css';
-    @import '@/assets/zayshop/assets/css/fontawesome.min.css';
+   @import '@/assets/famms/css/bootstrap.css';
+   @import '@/assets/famms/css/style.css';
+   @import '@/assets/famms/css/responsive.css';
 </style>

@@ -16,12 +16,12 @@ const routes = [
     component: AboutView
   },
   {
-    path: '/application',
+    path: '/',
     name: 'App',
     component: App
   },
   {
-    path: '/login',
+    path: '/manage',
     name: 'Login',
     component: Login
   }
