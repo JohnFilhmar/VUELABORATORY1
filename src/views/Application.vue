@@ -7,9 +7,7 @@
         <Footer/>
     </div>
 </template>
-
 <script>
-
 import Hero from '@/ApplicationComponents/Hero.vue';
 import Why from '@/ApplicationComponents/Why.vue';
 import Product from '@/ApplicationComponents/Product.vue';
@@ -26,10 +24,11 @@ export default {
     },
     mounted() {
         const scriptPaths = [
-        'famms/js/jquery-3.4.1.min.js',
-        'famms/js/popper.min.js',
-        'famms/js/bootstrap.js',
-        'famms/js/custom.js',
+        '/famms/js/jquery-3.4.1.min.js',
+        '/famms/js/owlcarousel.js',
+        '/famms/js/popper.min.js',
+        '/famms/js/bootstrap.js',
+        '/famms/js/custom.js',
         ];
 
         const loadScript = (path) => {
@@ -52,7 +51,6 @@ export default {
             console.error('Failed to load scripts:', error);
         }
         };
-
         loadScripts();
     }
 }
